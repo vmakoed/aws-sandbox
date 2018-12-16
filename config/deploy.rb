@@ -1,19 +1,14 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
-set :application, "aws-sandbox"
-set :repo_url, "git@github.com:vmakoed/aws-sandbox.git"
 server '139.59.149.187', port: 22, roles: [:web, :app, :db], primary: true
 
-# Change these
-
-set :repo_url,        'git@example.com:username/appname.git'
-set :application,     'appname'
+set :application,     'aws-sandbox'
+set :repo_url,        'git@github.com:vmakoed/aws-sandbox.git'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
-# Don't change these unless you know what you're doing
 set :pty,             true
 set :use_sudo,        false
 set :stage,           :production
@@ -36,9 +31,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 # set :log_level,     :debug
 # set :keep_releases, 5
 
-## Linked Files & Directories (Default None):
-# set :linked_files, %w{config/database.yml}
-# set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_files, %w{config/master.key config/database.yml}
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
