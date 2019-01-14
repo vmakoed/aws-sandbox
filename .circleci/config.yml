@@ -26,6 +26,10 @@ jobs:
         - v1-dependencies-
 
     - run:
+        - name: install mysql client
+        command: sudo apt-get update && sudo apt-get install mysql-client-5.7
+
+    - run:
         name: install dependencies
         command: |
           bundle install --jobs=4 --retry=3 --path vendor/bundle
