@@ -27,7 +27,7 @@ jobs:
 
     - run:
         name: install mysql client
-        command: sudo apt-get update && sudo apt-get install mysql-client-5.7
+        command: sudo apt-get update && sudo apt-get install mysql-client
 
     - run:
         name: install dependencies
