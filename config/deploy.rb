@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
-server '139.59.149.187', port: 22, roles: [:web, :app, :db], primary: true
+server '104.248.101.108', port: 22, roles: [:web, :app, :db], primary: true
 
 set :application,     'aws-sandbox'
 set :repo_url,        'git@github.com:vmakoed/aws-sandbox.git'
